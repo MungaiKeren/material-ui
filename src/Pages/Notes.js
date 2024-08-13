@@ -31,7 +31,7 @@ export default function Notes() {
 
             <Grid container>
                 {notes.map((note) => (
-                    <NoteCard note={note}/>
+                    <NoteCard key={note.id} note={note}/>
                 ))}
             </Grid>
         </Container>
