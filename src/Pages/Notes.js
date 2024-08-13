@@ -29,9 +29,11 @@ export default function Notes() {
                 All Notes
             </Typography>
 
-            <Grid container>
+            <Grid container spacing={3}>
                 {notes.map((note) => (
-                    <NoteCard key={note.id} note={note}/>
+                    <Grid item key={note.id} xs={12} md={6} lg={4}>
+                        <NoteCard note={note}/>
+                    </Grid>
                 ))}
             </Grid>
         </Container>

@@ -8,11 +8,11 @@ import {
     Typography
 } from "@mui/material";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { red, pink, blue, deepOrange } from '@mui/material/colors';
+import { red, deepPurple, blue, green } from '@mui/material/colors';
 import { DeleteOutline } from "@mui/icons-material";
 
 export default function NoteCard({ note }) {
-    const [color, setColor] = useState(deepOrange[500]);
+    const [color, setColor] = useState(deepPurple[500]);
 
     useEffect(() => {
         if (note.category == "todos") {
@@ -20,13 +20,13 @@ export default function NoteCard({ note }) {
         } else if (note.category == "work") {
             setColor(blue[500])
         } else if (note.category == "reminders") {
-            setColor(pink[400])
+            setColor(green[400])
         }
     }, [note]);
     
 
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card elevation={1}>
             <CardHeader
                 avatar={
                     <Avatar sx={{ bgcolor: color }}>
@@ -34,7 +34,7 @@ export default function NoteCard({ note }) {
                     </Avatar>
                 }
                 action={
-                    <IconButton>
+                    <IconButton onClick={() => console.log("delete" + note.title)}>
                         <DeleteOutline />
                     </IconButton>
                 }
@@ -43,8 +43,8 @@ export default function NoteCard({ note }) {
             />
             <CardContent>
                 <Typography 
-                    // variant="body2" 
-                    color="text.secondary"
+                    variant="body2"
+                    color="textSecondary"
                 >
                     {note.details}
                 </Typography>
