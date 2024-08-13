@@ -11,7 +11,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { red, deepPurple, blue, green } from '@mui/material/colors';
 import { DeleteOutline } from "@mui/icons-material";
 
-export default function NoteCard({ note }) {
+export default function NoteCard({ note, handleDelete }) {
     const [color, setColor] = useState(deepPurple[500]);
 
     useEffect(() => {
@@ -34,7 +34,7 @@ export default function NoteCard({ note }) {
                     </Avatar>
                 }
                 action={
-                    <IconButton onClick={() => console.log("delete" + note.title)}>
+                    <IconButton onClick={() => handleDelete(note.id)}>
                         <DeleteOutline />
                     </IconButton>
                 }
