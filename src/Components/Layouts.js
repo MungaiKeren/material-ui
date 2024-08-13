@@ -5,9 +5,13 @@ import {
     List,
     ListItem,
     ListItemIcon,
-    ListItemText
+    ListItemText,
+    AppBar,
+    Toolbar,
+    Avatar
 } from "@mui/material";
 import { AddCircleOutline, SubjectOutlined } from "@mui/icons-material";
+import { format } from "date-fns";
 
 const drawerWidth = 240;
 
@@ -30,6 +34,28 @@ export default function Layout({ children }) {
 
     return (
         <div style={{display: "flex"}}>
+            {/* app bar */}
+            <AppBar 
+                color="secondary"
+                sx={{
+                    width: `calc(100% - ${drawerWidth}px)`
+                }}
+                elevation={0}
+            >
+                <Toolbar>
+                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                        {format(new Date(), 'do MMMM Y')}
+                    </Typography>
+                    <Typography>
+                        Keren
+                    </Typography>
+                    <Avatar
+                        sx={{marginLeft: 2}}
+                        src=""/>
+                </Toolbar>
+            </AppBar>
+
+            {/* drawer */}
             <Drawer
                 variant="permanent"
                 anchor="left"
@@ -68,7 +94,7 @@ export default function Layout({ children }) {
                     ))}
                 </List>
             </Drawer>
-            <div>
+            <div style={{ marginTop: "64px" }}>
                 {children}
             </div>
         </div>
