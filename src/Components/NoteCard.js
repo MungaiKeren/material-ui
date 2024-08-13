@@ -26,7 +26,7 @@ export default function NoteCard({ note, handleDelete }) {
     
 
     return (
-        <Card elevation={1}>
+        <>
             <CardHeader
                 avatar={
                     <Avatar sx={{ bgcolor: color }}>
@@ -49,6 +49,6 @@ export default function NoteCard({ note, handleDelete }) {
                     {note.details}
                 </Typography>
             </CardContent>
-        </Card>
+        </>
     );
 };

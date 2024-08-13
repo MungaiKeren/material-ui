@@ -10,7 +10,7 @@ import {
     Toolbar,
     Avatar
 } from "@mui/material";
-import { AddCircleOutline, SubjectOutlined } from "@mui/icons-material";
+import { AddCircleOutline, Camera, SubjectOutlined } from "@mui/icons-material";
 import { format } from "date-fns";
 
 const drawerWidth = 240;
@@ -29,6 +29,11 @@ export default function Layout({ children }) {
             text: "Create Note",
             icon: <AddCircleOutline color="secondary"/>,
             path: "/create"
+        },
+        {
+            text: "Galleria",
+            icon: <Camera color="secondary"/>,
+            path: "/images"
         }
     ]
 
