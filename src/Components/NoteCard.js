@@ -30,7 +30,7 @@ export default function NoteCard({ note, handleDelete }) {
             <CardHeader
                 avatar={
                     <Avatar sx={{ bgcolor: color }}>
-                        {note.title.substring(0,1).toUpperCase()}
+                        {note.category.substring(0,1).toUpperCase()}
                     </Avatar>
                 }
                 action={

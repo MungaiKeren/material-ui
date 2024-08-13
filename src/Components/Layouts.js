@@ -85,7 +85,7 @@ export default function Layout({ children }) {
                             button                            
                             onClick={() => window.location.href = item.path}
                             sx={location == item.path ? {
-                                background: "#B1AFFF"
+                                background: "#A7E6FF"
                             } : null}
                         >
                             <ListItemIcon>{item.icon}</ListItemIcon>
