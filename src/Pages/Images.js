@@ -21,6 +21,7 @@ export default function ImageMasonry() {
             <ImageListItemBar 
                 title={item.title} 
                 subtitle={item.author} 
+                position="bottom"
                 actionIcon={
                     <IconButton
                         sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
