@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
+import NoteCard from "../Components/NoteCard";
+
 import { 
-    Container, Typography
+    Container,
+    Typography,
+    Grid,
+    Paper
 } from "@mui/material";
 
 export default function Notes() {
@@ -23,11 +28,12 @@ export default function Notes() {
             >
                 All Notes
             </Typography>
-            {notes.map((note) => (
-                <Typography key={note.id} variant="body1" gutterBottom>
-                    {note.title}
-                </Typography>
-            ))}
+
+            <Grid container>
+                {notes.map((note) => (
+                    <NoteCard note={note}/>
+                ))}
+            </Grid>
         </Container>
     );
 };
